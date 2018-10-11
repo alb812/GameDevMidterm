@@ -14,7 +14,7 @@ public class TimerScript : MonoBehaviour
 	//defines timer UI
 	public Text timerText;
 	//defines how many seconds are there
-	public int timeLeft = 120;
+	public int timeLeft = 140;
 
 	// Use this for initialization
 	void Start ()

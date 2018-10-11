@@ -503,7 +503,7 @@ MonoBehaviour:
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
-  m_enableKerning: 1
+  m_enableKerning: 0
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1
@@ -673,7 +673,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1779669940}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9351c09fcea87fd4ebab454ace24d028, type: 3}
+  m_Script: {fileID: 11500000, guid: cca7bc3d479d7e44f8b858a33bed63ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1917440522

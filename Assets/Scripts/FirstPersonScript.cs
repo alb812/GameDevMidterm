@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FirstPersonScript : MonoBehaviour
 {
@@ -72,9 +73,15 @@ public class FirstPersonScript : MonoBehaviour
 			Debug.Log("Object is picked up");
 		}
 
-		if (other.gameObject.name == "Mom")
+		if (other.gameObject.name == "Mom" && count == 4)
 		{
-			Debug.Log("You found Mom!");
+			SceneManager.LoadScene("WinState2");
+			Debug.Log("You found Mom and Got all your Stuff!");
+		}
+		else if (other.gameObject.name == "Mom" && count < 4)
+		{
+			SceneManager.LoadScene("WinState1");
+			Debug.Log("You found mom but missed stuff.");
 		}
 	}
 
