@@ -15,7 +15,7 @@ public class MainMenuScript : MonoBehaviour
     
     public void InfoScene()
     {
-        SceneManager.LoadScene("InfoScene");
+        SceneManager.LoadScene("AboutScene");
     }
     
     public void ReturnMenu()

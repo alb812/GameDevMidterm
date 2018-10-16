@@ -7,6 +7,10 @@ using UnityEngine.SceneManagement;
 public class FirstPersonScript : MonoBehaviour
 {
 
+    //for better mouse look
+	private float verticalLook;
+	public float lookSpeed = 100f;
+
 	public float moveSpeed = 0.5f;
 
 	//for text UI
@@ -41,7 +45,7 @@ public class FirstPersonScript : MonoBehaviour
 		//rotate the camera based on mouse input 
 		//first rotate the body based on horizontal mouse movement
 		transform.Rotate(0f, mouseX, 0f); //Yaw
-		Camera.main.transform.Rotate(-mouseY, 0f, 0f); //add negative to fix inverse
+		//Camera.main.transform.Rotate(-mouseY, 0f, 0f); //add negative to fix inverse
 
 		//WASD Movement
 		//GetAxis usually returns a float between -1f and 1f
@@ -49,9 +53,23 @@ public class FirstPersonScript : MonoBehaviour
 		float horizontal = Input.GetAxis("Horizontal"); //A/D Movement
 		float vertical = Input.GetAxis("Vertical"); //W/S Movement
 
+		//better mouse look
+		verticalLook += -mouseY;
+		verticalLook = Mathf.Clamp(verticalLook, -80f, 80f);
+		
+		Camera.main.transform.transform.localEulerAngles = new Vector3(verticalLook, 0f, 0f);
+		
 		//the BETTER way...
 		inputVector = transform.forward * vertical;
 		inputVector += transform.right * horizontal; //this line is += so it doesnt override the one before it
+		
+		//hide mouse cursor
+		if (Input.GetMouseButtonDown(0))
+		{
+			Cursor.lockState = CursorLockMode.Locked;
+			Cursor.visible = false;
+		}
+		
 	}
 
 	//it runs every physic frame (a different framerate than input or rendering)
