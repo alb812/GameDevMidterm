@@ -11,6 +11,8 @@ public class MainMenuScript : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene("MainGame");
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
     }
     
     public void InfoScene()

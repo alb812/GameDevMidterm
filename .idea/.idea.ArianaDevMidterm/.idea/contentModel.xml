@@ -12,6 +12,7 @@
           <e p="FirstPersonScript.cs" t="Include" />
           <e p="MainMenuScript.cs" t="Include" />
           <e p="TimerScript.cs" t="Include" />
+          <e p="TryAgainScript.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Resources" t="Include">

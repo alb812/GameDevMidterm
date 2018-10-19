@@ -36,7 +36,10 @@ public class TimerScript : MonoBehaviour
 		if (timeLeft <= 0)
 		{
 			StopCoroutine("CountDown");
+			//Cursor.lockState = CursorLockMode.None;
+            //Cursor.visible = true;
 			SceneManager.LoadScene("GameOver");
+			
 		}
 	}
 	

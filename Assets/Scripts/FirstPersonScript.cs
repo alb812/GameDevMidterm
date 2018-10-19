@@ -19,11 +19,17 @@ public class FirstPersonScript : MonoBehaviour
 
 	//this variable will remember input and pass it to physics
 	Vector3 inputVector;
+	
+	//Audio
+	AudioSource PickUpSfx;
 
 	void Start()
 	{
 		count = 0;
 		SetCountText();
+		
+		//audio
+		PickUpSfx = GetComponent<AudioSource>();
 	}
 
 	// Update is called once per frame
@@ -64,11 +70,11 @@ public class FirstPersonScript : MonoBehaviour
 		inputVector += transform.right * horizontal; //this line is += so it doesnt override the one before it
 		
 		//hide mouse cursor
-		if (Input.GetMouseButtonDown(0))
+		/*if (Input.GetMouseButtonDown(0))
 		{
 			Cursor.lockState = CursorLockMode.Locked;
 			Cursor.visible = false;
-		}
+		}*/
 		
 	}
 
@@ -88,6 +94,7 @@ public class FirstPersonScript : MonoBehaviour
 			other.gameObject.SetActive(false);
 			count = count + 1;
 			SetCountText();
+			PickUpSfx.Play();
 			Debug.Log("Object is picked up");
 		}
 
@@ -105,6 +112,6 @@ public class FirstPersonScript : MonoBehaviour
 
 	void SetCountText()
 	{
-		countText.text = "Items Collected: " + count.ToString();
+		countText.text = "Items Collected: " + count.ToString() + " of 4";
 	}
 }

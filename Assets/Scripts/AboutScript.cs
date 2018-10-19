@@ -9,6 +9,21 @@ public class AboutScript : MonoBehaviour {
 	
      public void ReturnMenu()
        {
-           SceneManager.LoadScene("StartGame");
+	       SceneManager.LoadScene("StartGame");
        }
+
+	void Update()
+	{
+			if (Application.loadedLevelName == "GameOver")
+			{
+				Cursor.lockState = CursorLockMode.None;
+				Cursor.visible = true;
+			}
+		
+		if (Application.loadedLevelName == "WinState1")
+		{
+			Cursor.lockState = CursorLockMode.None;
+			Cursor.visible = true;
+		}
+	}
 }
